@@ -29,6 +29,9 @@ class Stopwatch extends Component {
         const s = this.state
         const delta = s.curTime - s.startTime
         const t = Math.floor(delta/1000)
+        //floor()는 소수점이하를 버림
+        //ceil()는 소수점이하를 올림
+        //round()는 소수점이하를 반올림
         const ss = t % 60
         const m = Math.floor(t/60)
         const mm = m % 60
@@ -43,7 +46,7 @@ class Stopwatch extends Component {
     }
     render() {
         let label = 'START'
-        if( this.state.isLive){
+        if( this.state.isLive ){
             label = 'STOP'
         }
         return (
